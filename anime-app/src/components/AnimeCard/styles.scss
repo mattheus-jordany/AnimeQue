@@ -1,0 +1,66 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.anime-card {
+  .card {
+    // Estilo Grafite Premium
+    background-color: $dark; // Cor de fundo escura
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    // Efeito de borda gradiente
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      padding: 1px;
+      background: linear-gradient(135deg, $primary 0%, transparent 70%);
+       mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba($primary, 0.2);
+      
+      &::before {
+        background: linear-gradient(135deg, $primary 0%, $secondary 70%);
+      }
+    }
+  }
+
+  .card-img-top {
+    border-bottom: 1px solid rgba($primary, 0.3);
+  }
+
+  .card-title {
+    color: $light; 
+    @include text-ellipsis;
+    font-weight: 600;
+  }
+
+  .card-text {
+    color: $light;
+    font-size: 0.9rem;
+  }
+
+  .badge {
+    background-color: $primary;
+    color: white;
+    font-weight: 500;
+  }
+}

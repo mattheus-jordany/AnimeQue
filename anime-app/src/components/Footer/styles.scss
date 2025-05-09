@@ -1,0 +1,47 @@
+@import "@/styles/variables";
+
+.footer {
+  background-color: var(--bs-dark);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+
+  h5 {
+    color: var(--bs-primary);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        color: var(--bs-gray-300);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--bs-primary);
+        }
+      }
+    }
+  }
+
+  .text-center {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    
+    .row > div {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

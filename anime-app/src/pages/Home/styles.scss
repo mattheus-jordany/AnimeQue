@@ -1,0 +1,188 @@
+@import '@/styles/variables';
+
+.home-page {
+  padding-bottom: 3rem;
+
+  // Seção Hero
+  .hero-section {
+    background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+    color: white;
+    padding: 5rem 0;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('@/assets/hero-pattern.png');
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p.lead {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .hero-image {
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: transform 0.5s ease;
+      border: 5px solid rgb(0, 0, 0);
+
+      &:hover {
+        transform: perspective(1000px) rotateY(0deg);
+      }
+    }
+
+    @media (max-width: 992px) {
+      padding: 4rem 0;
+      text-align: center;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-image {
+        margin-top: 2rem;
+        max-width: 80%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 3rem 0;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p.lead {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // Seção de Animes em Destaque
+  .featured-animes {
+    padding: 2rem 0;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      color: $text-color;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, $primary 0%, $secondary 100%);
+        border-radius: 3px;
+      }
+    }
+
+    .anime-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .anime-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .anime-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  // Seção de CTA (Call to Action)
+  .cta-section {
+    background-color: $light;
+    padding: 4rem 0;
+    margin-top: 3rem;
+    text-align: center;
+    border-radius: 12px;
+
+    h3 {
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: $dark;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: $text-muted;
+    }
+
+    .btn-outline-primary {
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border-width: 2px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $primary;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($primary, 0.2);
+      }
+    }
+  }
+}

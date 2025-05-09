@@ -1,0 +1,106 @@
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Variables
+@import './variables';
+
+// Mixins
+@import './mixins';
+
+// Global Styles
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $primary;
+  color: $text-color;
+}
+
+.main-content {
+  min-height: calc(100vh - 120px);
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.anime-card {
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+.hero-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  color: white;
+  border-radius: 0 0 20px 20px;
+}
+
+.anime-details-page {
+  .anime-stats {
+    background: $primary;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    .stat-box {
+      text-align: center;
+      
+      h5 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: $text-muted;
+      }
+      
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.search-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(md) {
+  .hero-section {
+    padding: 60px 0;
+    text-align: center;
+    
+    .display-4 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .anime-card {
+    .card-img-top {
+      height: 250px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .hero-section {
+    padding: 40px 0;
+    
+    .display-4 {
+      font-size: 2rem;
+    }
+  }
+  
+  .anime-details-page {
+    .col-md-4 {
+      margin-bottom: 20px;
+    }
+  }
+}
